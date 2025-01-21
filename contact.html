@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact FAIZ HILMIE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Added Google Fonts link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body style="background-color: #f8f8f8;">
+    <header>
+        <div class="title">
+            <h1><a href="index.html">FAIZ HILMIE</a></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="index.html#fabric-soft-glass">Fabric Soft Glass - (Blender Study)</a></li>
+                <li><a href="index.html#portable-cd-player">Portable CD Player - (Blender Study)</a></li>
+                <li><a href="index.html#joystick">Joystick (Blender Practice)</a></li>
+                <li><a href="index.html#3d-icon-animation">3D ICON & ANIMATION BLENDER STUDY</a></li>
+                <li><a href="index.html#unreal-engine-river">UNREAL ENGINE 4: RIVER</a></li>
+                <li><a href="index.html#3d-jaguar">3D JAGUAR F-TYPE MODELING/RENDERING</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="contact">
+            <div class="contact-header">
+                <h2>Get in Touch</h2>
+                <p class="contact-description">Ready to start your next project? Let's discuss your ideas and make them reality.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <form id="contact-form" class="animated-form" novalidate aria-label="Contact form">
+                    <div id="form-messages" class="form-messages" aria-live="polite"></div>
+                    
+                    <div class="form-group">
+                        <label for="name">
+                            <i class="fas fa-user" aria-hidden="true"></i> Full Name
+                            <span class="required" aria-label="required">*</span>
+                        </label>
+                        <input type="text" 
+                               id="name" 
+                               name="name" 
+                               placeholder="John Doe" 
+                               required 
+                               aria-required="true"
+                               minlength="2">
+                        <div class="form-feedback" aria-live="polite"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope" aria-hidden="true"></i> Email Address
+                            <span class="required" aria-label="required">*</span>
+                        </label>
+                        <input type="email" 
+                               id="email" 
+                               name="email" 
+                               placeholder="john@example.com" 
+                               required 
+                               aria-required="true"
+                               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                        <div class="form-feedback" aria-live="polite"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">
+                            <i class="fas fa-pen"></i> Project Type
+                            <span class="required">*</span>
+                        </label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a project type</option>
+                            <option value="3D Modeling">3D Modeling</option>
+                            <option value="Animation">Animation</option>
+                            <option value="Rendering">Rendering</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">
+                            <i class="fas fa-comment" aria-hidden="true"></i> Project Details
+                            <span class="required" aria-label="required">*</span>
+                        </label>
+                        <textarea id="message" 
+                                  name="message" 
+                                  placeholder="Tell me about your project requirements, timeline, and budget..." 
+                                  required 
+                                  aria-required="true"
+                                  minlength="10"></textarea>
+                        <div class="form-feedback" aria-live="polite"></div>
+                    </div>
+
+                    <button type="submit" class="submit-button" aria-label="Send message">
+                        <span class="button-text">Send Message</span>
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        <span class="loading-spinner" aria-hidden="true"></span>
+                    </button>
+                </form>
+
+                <div class="contact-info" aria-label="Contact information">
+                    <div class="info-header">
+                        <h3><i class="fas fa-address-card"></i> Contact Details</h3>
+                        <p>Let's create something amazing together</p>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:contact@faizhilmie.com">contact@faizhilmie.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+1234567890">+123 456 7890</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Kuala Lumpur, Malaysia</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="availability-status">
+                        <div class="status-indicator online"></div>
+                        <span>Available for New Projects</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://behance.net" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
+                        <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://dribbble.com" target="_blank" title="Dribbble"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-copyright">
+                <p>&copy; 2023 FAIZ HILMIE. All rights reserved.</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://behance.net" target="_blank">Behance</a>
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

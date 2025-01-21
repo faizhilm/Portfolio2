@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FAIZ HILMIE - Creative 3D Artist & Designer specializing in 3D visualizations and animations">
+    <meta name="keywords" content="3D artist, designer, visualization, animation, portfolio">
+    <title>FAIZ HILMIE - Creative 3D Artist & Designer</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
+    <link rel="preload" href="styles.css" as="style">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Faiz Hilmie",
+        "jobTitle": "3D Artist & Designer",
+        "url": "https://faizhilmie.com",
+        "sameAs": [
+            "https://behance.net/faizhilmie",
+            "https://linkedin.com/in/faizhilmie"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header role="banner">
+        <div class="title">
+            <h1><a href="index.html" aria-label="Home">FAIZ HILMIE</a></h1>
+        </div>
+        <nav role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="#work" class="active" aria-current="page"><i class="fas fa-briefcase" aria-hidden="true"></i> Work</a></li>
+                <li><a href="#fabric-soft-glass"><i class="fas fa-glass-martini" aria-hidden="true"></i> Fabric Soft Glass</a></li>
+                <li><a href="#portable-cd-player"><i class="fas fa-compact-disc" aria-hidden="true"></i> Portable CD Player</a></li>
+                <li><a href="#joystick"><i class="fas fa-gamepad" aria-hidden="true"></i> Joystick</a></li>
+                <li><a href="#3d-icon-animation"><i class="fas fa-cube" aria-hidden="true"></i> 3D Icon & Animation</a></li>
+                <li><a href="#unreal-engine-river"><i class="fas fa-water" aria-hidden="true"></i> Unreal Engine River</a></li>
+                <li><a href="#3d-jaguar"><i class="fas fa-car" aria-hidden="true"></i> 3D Jaguar F-Type</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main role="main">
+        <section class="greeting" aria-labelledby="greeting-title">
+            <div class="greeting-content">
+                <h2 id="greeting-title">Hi, I'm FAIZ HILMIE!</h2>
+                <p>Creative 3D Artist & Designer</p>
+                <div class="greeting-description">
+                    <p>I specialize in creating stunning 3D visualizations and animations</p>
+                </div>
+                <button id="services-button" aria-label="Explore my services">
+                    Explore My Services
+                </button>
+            </div>
+            <div class="greeting-decoration" aria-hidden="true"></div>
+        </section>
+        <section id="work" aria-labelledby="work-title">
+            <div class="section-header">
+                <h2 id="work-title">Featured Work</h2>
+                <p class="section-description">Explore my latest projects in 3D modeling, animation, and design.</p>
+            </div>
+            
+            <div class="filter-buttons" role="tablist" aria-label="Portfolio filters">
+                <button class="filter-button active" data-filter="all" role="tab" aria-selected="true">All</button>
+                <button class="filter-button" data-filter="3d-modeling" role="tab">3D Modeling</button>
+                <button class="filter-button" data-filter="animation" role="tab">Animation</button>
+                <button class="filter-button" data-filter="design" role="tab">Design</button>
+            </div>
+        
+            <div class="grid-gallery" role="tabpanel">
+                <div class="project-card" data-category="3d-modeling">
+                    <img src="images/image1.png" 
+                         alt="Fabric Soft Glass - Material study" 
+                         loading="lazy"
+                         onerror="this.onerror=null; this.src='images/placeholder.png'">
+                    <span class="project-category" aria-label="Category">3D Modeling</span>
+                    <div class="project-info">
+                        <h3>Fabric Soft Glass</h3>
+                        <p>A study in material properties and light interaction</p>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="animation">
+                    <img src="images/image2.png" 
+                         alt="Portable CD Player - Retro device animation study" 
+                         loading="lazy"
+                         onerror="this.onerror=null; this.src='images/placeholder.png'">
+                    <span class="project-category" aria-label="Category">Animation</span>
+                    <div class="project-info">
+                        <h3>Portable CD Player</h3>
+                        <p>Retro device animation study</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="design">
+                    <img src="images/image3.png" 
+                         alt="Joystick - Modern gaming peripheral concept" 
+                         loading="lazy"
+                         onerror="this.onerror=null; this.src='images/placeholder.png'">
+                    <span class="project-category" aria-label="Category">Design</span>
+                    <div class="project-info">
+                        <h3>Joystick Design</h3>
+                        <p>Modern gaming peripheral concept</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="animation">
+                    <img src="images/image4.png" 
+                         alt="3D Icon Animation - Dynamic icon animations for modern interfaces" 
+                         loading="lazy"
+                         onerror="this.onerror=null; this.src='images/placeholder.png'">
+                    <span class="project-category" aria-label="Category">Animation</span>
+                    <div class="project-info">
+                        <h3>3D Icon Animation</h3>
+                        <p>Dynamic icon animations for modern interfaces</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="3d-modeling">
+                    <img src="images/image5.png" 
+                         alt="Unreal Engine River - Environmental visualization study" 
+                         loading="lazy"
+                         onerror="this.onerror=null; this.src='images/placeholder.png'">
+                    <span class="project-category" aria-label="Category">3D Modeling</span>
+                    <div class="project-info">
+                        <h3>Unreal Engine River</h3>
+                        <p>Environmental visualization study</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="design">
+                    <img src="images/image6.png" 
+                         alt="3D Jaguar - Automotive design visualization" 
+                         loading="lazy"
+                         onerror="this.onerror=null; this.src='images/placeholder.png'">
+                    <span class="project-category" aria-label="Category">Design</span>
+                    <div class="project-info">
+                        <h3>3D Jaguar F-Type</h3>
+                        <p>Automotive design visualization</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-copyright">
+                <p>&copy; <time datetime="2023">2023</time> FAIZ HILMIE. All rights reserved.</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://behance.net" target="_blank" rel="noopener noreferrer" aria-label="Visit my Behance profile">Behance</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile">LinkedIn</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Visit my Instagram profile">Instagram</a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>
