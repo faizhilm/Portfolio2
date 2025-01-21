@@ -3,166 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FAIZ HILMIE - Creative 3D Artist & Designer specializing in 3D visualizations and animations">
-    <meta name="keywords" content="3D artist, designer, visualization, animation, portfolio">
-    <title>FAIZ HILMIE - Creative 3D Artist & Designer</title>
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
-    <link rel="preload" href="styles.css" as="style">
-    
-    <!-- Stylesheets -->
+    <title>Contact FAIZ HILMIE</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Added Google Fonts link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "Person",
-        "name": "Faiz Hilmie",
-        "jobTitle": "3D Artist & Designer",
-        "url": "https://faizhilmie.com",
-        "sameAs": [
-            "https://behance.net/faizhilmie",
-            "https://linkedin.com/in/faizhilmie"
-        ]
-    }
-    </script>
 </head>
-<body>
-    <header role="banner">
+<body style="background-color: #f8f8f8;">
+    <header>
         <div class="title">
-            <h1><a href="index.html" aria-label="Home">FAIZ HILMIE</a></h1>
+            <h1><a href="index.html">FAIZ HILMIE</a></h1>
         </div>
-        <nav role="navigation" aria-label="Main navigation">
+        <nav>
             <ul>
-                <li><a href="#work" class="active" aria-current="page"><i class="fas fa-briefcase" aria-hidden="true"></i> Work</a></li>
-                <li><a href="#fabric-soft-glass"><i class="fas fa-glass-martini" aria-hidden="true"></i> Fabric Soft Glass</a></li>
-                <li><a href="#portable-cd-player"><i class="fas fa-compact-disc" aria-hidden="true"></i> Portable CD Player</a></li>
-                <li><a href="#joystick"><i class="fas fa-gamepad" aria-hidden="true"></i> Joystick</a></li>
-                <li><a href="#3d-icon-animation"><i class="fas fa-cube" aria-hidden="true"></i> 3D Icon & Animation</a></li>
-                <li><a href="#unreal-engine-river"><i class="fas fa-water" aria-hidden="true"></i> Unreal Engine River</a></li>
-                <li><a href="#3d-jaguar"><i class="fas fa-car" aria-hidden="true"></i> 3D Jaguar F-Type</a></li>
-                <li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="index.html#fabric-soft-glass">Fabric Soft Glass - (Blender Study)</a></li>
+                <li><a href="index.html#portable-cd-player">Portable CD Player - (Blender Study)</a></li>
+                <li><a href="index.html#joystick">Joystick (Blender Practice)</a></li>
+                <li><a href="index.html#3d-icon-animation">3D ICON & ANIMATION BLENDER STUDY</a></li>
+                <li><a href="index.html#unreal-engine-river">UNREAL ENGINE 4: RIVER</a></li>
+                <li><a href="index.html#3d-jaguar">3D JAGUAR F-TYPE MODELING/RENDERING</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <main role="main">
-        <section class="greeting" aria-labelledby="greeting-title">
-            <div class="greeting-content">
-                <h2 id="greeting-title">Hi, I'm FAIZ HILMIE!</h2>
-                <p>Creative 3D Artist & Designer</p>
-                <div class="greeting-description">
-                    <p>I specialize in creating stunning 3D visualizations and animations</p>
-                </div>
-                <button id="services-button" aria-label="Explore my services">
-                    Explore My Services
-                </button>
-            </div>
-            <div class="greeting-decoration" aria-hidden="true"></div>
-        </section>
-        <section id="work" aria-labelledby="work-title">
-            <div class="section-header">
-                <h2 id="work-title">Featured Work</h2>
-                <p class="section-description">Explore my latest projects in 3D modeling, animation, and design.</p>
+    <main>
+        <section id="contact">
+            <div class="contact-header">
+                <h2>Get in Touch</h2>
+                <p class="contact-description">Ready to start your next project? Let's discuss your ideas and make them reality.</p>
             </div>
             
-            <div class="filter-buttons" role="tablist" aria-label="Portfolio filters">
-                <button class="filter-button active" data-filter="all" role="tab" aria-selected="true">All</button>
-                <button class="filter-button" data-filter="3d-modeling" role="tab">3D Modeling</button>
-                <button class="filter-button" data-filter="animation" role="tab">Animation</button>
-                <button class="filter-button" data-filter="design" role="tab">Design</button>
-            </div>
-        
-            <div class="grid-gallery" role="tabpanel">
-                <div class="project-card" data-category="3d-modeling">
-                    <img src="images/image1.png" 
-                         alt="Fabric Soft Glass - Material study" 
-                         loading="lazy"
-                         onerror="this.onerror=null; this.src='images/placeholder.png'">
-                    <span class="project-category" aria-label="Category">3D Modeling</span>
-                    <div class="project-info">
-                        <h3>Fabric Soft Glass</h3>
-                        <p>A study in material properties and light interaction</p>
+            <div class="contact-grid">
+                <form id="contact-form" class="animated-form" novalidate aria-label="Contact form">
+                    <div id="form-messages" class="form-messages" aria-live="polite"></div>
+                    
+                    <div class="form-group">
+                        <label for="name">
+                            <i class="fas fa-user" aria-hidden="true"></i> Full Name
+                            <span class="required" aria-label="required">*</span>
+                        </label>
+                        <input type="text" 
+                               id="name" 
+                               name="name" 
+                               placeholder="John Doe" 
+                               required 
+                               aria-required="true"
+                               minlength="2">
+                        <div class="form-feedback" aria-live="polite"></div>
                     </div>
-                </div>
-                
-                <div class="project-card" data-category="animation">
-                    <img src="images/image2.png" 
-                         alt="Portable CD Player - Retro device animation study" 
-                         loading="lazy"
-                         onerror="this.onerror=null; this.src='images/placeholder.png'">
-                    <span class="project-category" aria-label="Category">Animation</span>
-                    <div class="project-info">
-                        <h3>Portable CD Player</h3>
-                        <p>Retro device animation study</p>
-                    </div>
-                </div>
 
-                <div class="project-card" data-category="design">
-                    <img src="images/image3.png" 
-                         alt="Joystick - Modern gaming peripheral concept" 
-                         loading="lazy"
-                         onerror="this.onerror=null; this.src='images/placeholder.png'">
-                    <span class="project-category" aria-label="Category">Design</span>
-                    <div class="project-info">
-                        <h3>Joystick Design</h3>
-                        <p>Modern gaming peripheral concept</p>
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope" aria-hidden="true"></i> Email Address
+                            <span class="required" aria-label="required">*</span>
+                        </label>
+                        <input type="email" 
+                               id="email" 
+                               name="email" 
+                               placeholder="john@example.com" 
+                               required 
+                               aria-required="true"
+                               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                        <div class="form-feedback" aria-live="polite"></div>
                     </div>
-                </div>
 
-                <div class="project-card" data-category="animation">
-                    <img src="images/image4.png" 
-                         alt="3D Icon Animation - Dynamic icon animations for modern interfaces" 
-                         loading="lazy"
-                         onerror="this.onerror=null; this.src='images/placeholder.png'">
-                    <span class="project-category" aria-label="Category">Animation</span>
-                    <div class="project-info">
-                        <h3>3D Icon Animation</h3>
-                        <p>Dynamic icon animations for modern interfaces</p>
+                    <div class="form-group">
+                        <label for="subject">
+                            <i class="fas fa-pen"></i> Project Type
+                            <span class="required">*</span>
+                        </label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a project type</option>
+                            <option value="3D Modeling">3D Modeling</option>
+                            <option value="Animation">Animation</option>
+                            <option value="Rendering">Rendering</option>
+                            <option value="Other">Other</option>
+                        </select>
                     </div>
-                </div>
 
-                <div class="project-card" data-category="3d-modeling">
-                    <img src="images/image5.png" 
-                         alt="Unreal Engine River - Environmental visualization study" 
-                         loading="lazy"
-                         onerror="this.onerror=null; this.src='images/placeholder.png'">
-                    <span class="project-category" aria-label="Category">3D Modeling</span>
-                    <div class="project-info">
-                        <h3>Unreal Engine River</h3>
-                        <p>Environmental visualization study</p>
+                    <div class="form-group">
+                        <label for="message">
+                            <i class="fas fa-comment" aria-hidden="true"></i> Project Details
+                            <span class="required" aria-label="required">*</span>
+                        </label>
+                        <textarea id="message" 
+                                  name="message" 
+                                  placeholder="Tell me about your project requirements, timeline, and budget..." 
+                                  required 
+                                  aria-required="true"
+                                  minlength="10"></textarea>
+                        <div class="form-feedback" aria-live="polite"></div>
                     </div>
-                </div>
 
-                <div class="project-card" data-category="design">
-                    <img src="images/image6.png" 
-                         alt="3D Jaguar - Automotive design visualization" 
-                         loading="lazy"
-                         onerror="this.onerror=null; this.src='images/placeholder.png'">
-                    <span class="project-category" aria-label="Category">Design</span>
-                    <div class="project-info">
-                        <h3>3D Jaguar F-Type</h3>
-                        <p>Automotive design visualization</p>
+                    <button type="submit" class="submit-button" aria-label="Send message">
+                        <span class="button-text">Send Message</span>
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        <span class="loading-spinner" aria-hidden="true"></span>
+                    </button>
+                </form>
+
+                <div class="contact-info" aria-label="Contact information">
+                    <div class="info-header">
+                        <h3><i class="fas fa-address-card"></i> Contact Details</h3>
+                        <p>Let's create something amazing together</p>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:contact@faizhilmie.com">contact@faizhilmie.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+1234567890">+123 456 7890</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Kuala Lumpur, Malaysia</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="availability-status">
+                        <div class="status-indicator online"></div>
+                        <span>Available for New Projects</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://behance.net" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
+                        <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://dribbble.com" target="_blank" title="Dribbble"><i class="fab fa-dribbble"></i></a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <footer role="contentinfo">
+    <footer>
         <div class="footer-content">
             <div class="footer-copyright">
-                <p>&copy; <time datetime="2023">2023</time> FAIZ HILMIE. All rights reserved.</p>
+                <p>&copy; 2023 FAIZ HILMIE. All rights reserved.</p>
             </div>
             <div class="footer-social">
-                <a href="https://behance.net" target="_blank" rel="noopener noreferrer" aria-label="Visit my Behance profile">Behance</a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile">LinkedIn</a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Visit my Instagram profile">Instagram</a>
+                <a href="https://behance.net" target="_blank">Behance</a>
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
             </div>
         </div>
     </footer>
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
