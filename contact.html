@@ -7,22 +7,31 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Added Google Fonts link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --header-text-color: #ffffff; /* White color for better readability */
+            --header-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <meta name="description" content="Contact FAIZ HILMIE - Get in touch for 3D design and animation projects">
 </head>
 <body style="background-color: #f8f8f8;">
     <header>
         <div class="title">
-            <h1><a href="index.html">FAIZ HILMIE</a></h1>
+            <h1><a href="index.html" data-text="FAIZ HILMIE">FAIZ HILMIE</a></h1>
         </div>
         <nav>
             <ul>
-                <li><a href="index.html#work">Work</a></li>
-                <li><a href="index.html#fabric-soft-glass">Fabric Soft Glass - (Blender Study)</a></li>
-                <li><a href="index.html#portable-cd-player">Portable CD Player - (Blender Study)</a></li>
-                <li><a href="index.html#joystick">Joystick (Blender Practice)</a></li>
-                <li><a href="index.html#3d-icon-animation">3D ICON & ANIMATION BLENDER STUDY</a></li>
-                <li><a href="index.html#unreal-engine-river">UNREAL ENGINE 4: RIVER</a></li>
-                <li><a href="index.html#3d-jaguar">3D JAGUAR F-TYPE MODELING/RENDERING</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="./index.html#work"><i class="fas fa-briefcase"></i> Work</a></li>
+                <li><a href="./index.html#fabric-soft-glass"><i class="fas fa-glass-martini"></i> Fabric Soft Glass</a></li>
+                <li><a href="./index.html#portable-cd-player"><i class="fas fa-compact-disc"></i> Portable CD Player</a></li>
+                <li><a href="./index.html#joystick"><i class="fas fa-gamepad"></i> Joystick</a></li>
+                <li><a href="./index.html#3d-icon-animation"><i class="fas fa-cube"></i> 3D Icon & Animation</a></li>
+                <li><a href="./index.html#unreal-engine-river"><i class="fas fa-water"></i> Unreal Engine River</a></li>
+                <li><a href="./index.html#3d-jaguar"><i class="fas fa-car"></i> 3D Jaguar F-Type</a></li>
+                <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -35,7 +44,7 @@
             
             <div class="contact-grid">
                 <form id="contact-form" class="animated-form" novalidate aria-label="Contact form">
-                    <div id="form-messages" class="form-messages" aria-live="polite"></div>
+                    <div id="form-messages" class="form-messages" role="alert" aria-live="polite"></div>
                     
                     <div class="form-group">
                         <label for="name">
@@ -45,7 +54,6 @@
                         <input type="text" 
                                id="name" 
                                name="name" 
-                               placeholder="John Doe" 
                                required 
                                aria-required="true"
                                minlength="2">
@@ -101,6 +109,10 @@
                         <span class="loading-spinner" aria-hidden="true"></span>
                     </button>
                 </form>
+
+                <div id="form-success" class="form-messages success" style="display: none;" role="alert">
+                    Your message has been sent successfully!
+                </div>
 
                 <div class="contact-info" aria-label="Contact information">
                     <div class="info-header">

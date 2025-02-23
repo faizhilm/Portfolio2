@@ -1,15 +1,28 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Get current page path
+    // Get current page path and hash
     const currentPath = window.location.pathname;
     const currentHash = window.location.hash;
-
+    
     // Get all navigation links
     const navLinks = document.querySelectorAll('nav ul li a');
-
-    // Highlight active link based on current page/section
+    
+    // Remove all active classes first
+    navLinks.forEach(link => link.classList.remove('active'));
+    
+    // Set active class based on current page/section
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (href === currentHash || href === currentPath.split('/').pop()) {
+        
+        // Check if we're on the contact page
+        if (currentPath.includes('contact.html') && href === 'contact.html') {
+            link.classList.add('active');
+        }
+        // Check if we're on the main page with a hash
+        else if (currentHash && href === currentHash) {
+            link.classList.add('active');
+        }
+        // Check if we're on the main page without hash
+        else if (!currentHash && currentPath.includes('index.html') && href === '#work') {
             link.classList.add('active');
         }
     });
@@ -32,20 +45,25 @@ document.addEventListener('DOMContentLoaded', function() {
     function validateForm() {
         let isValid = true;
         const inputs = form.querySelectorAll('input, textarea, select');
+        const errors = {};
 
         inputs.forEach(input => {
-            clearFormError(input);
-
-            if (input.hasAttribute('required') && !input.value) {
-                showFormError(input, 'This field is required');
+            const value = input.value.trim();
+            if (input.hasAttribute('required') && !value) {
+                errors[input.id] = 'This field is required';
                 isValid = false;
-            } else if (input.type === 'email' && input.value) {
+            } else if (input.type === 'email' && value) {
                 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailPattern.test(input.value)) {
-                    showFormError(input, 'Please enter a valid email address');
+                if (!emailPattern.test(value)) {
+                    errors[input.id] = 'Please enter a valid email address';
                     isValid = false;
                 }
             }
+        });
+
+        // Show all errors at once
+        Object.keys(errors).forEach(id => {
+            showError(document.getElementById(id), errors[id]);
         });
 
         return isValid;
@@ -244,5 +262,85 @@ closeImageModal.addEventListener('click', function() {
 window.addEventListener('click', function(event) {
     if (event.target === imageModal) {
         imageModal.style.display = 'none';
+    }
+});
+
+// Magic Circle Cursor Effect
+const magicCircle = document.createElement('div');
+magicCircle.className = 'magic-circle';
+document.body.appendChild(magicCircle);
+
+// Debounce function for better performance
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Optimize mousemove event
+document.addEventListener('mousemove', debounce((e) => {
+    requestAnimationFrame(() => {
+        magicCircle.style.left = e.clientX - 150 + 'px';
+        magicCircle.style.top = e.clientY - 150 + 'px';
+    });
+}, 10));
+
+// Magic Activation Effect
+document.querySelectorAll('.magic-effect').forEach(element => {
+    element.addEventListener('mouseover', function() {
+        const activationSound = new Audio('activation.mp3');
+        activationSound.volume = 0.2;
+        activationSound.play().catch(() => {});
+    });
+});
+
+// Add form validation improvements
+function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+document.getElementById('contact-form')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const button = this.querySelector('button[type="submit"]');
+    const formMessages = document.getElementById('form-messages');
+    
+    // Validate form
+    const name = this.querySelector('#name').value.trim();
+    const email = this.querySelector('#email').value.trim();
+    const message = this.querySelector('#message').value.trim();
+    
+    if (!name || !email || !message) {
+        formMessages.textContent = 'Please fill in all required fields.';
+        formMessages.className = 'form-messages error';
+        return;
+    }
+    
+    if (!validateEmail(email)) {
+        formMessages.textContent = 'Please enter a valid email address.';
+        formMessages.className = 'form-messages error';
+        return;
+    }
+    
+    // Show loading state
+    button.classList.add('loading');
+    
+    try {
+        // Add your form submission logic here
+        await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API call
+        
+        formMessages.textContent = 'Message sent successfully!';
+        formMessages.className = 'form-messages success';
+        this.reset();
+    } catch (error) {
+        formMessages.textContent = 'An error occurred. Please try again.';
+        formMessages.className = 'form-messages error';
+    } finally {
+        button.classList.remove('loading');
     }
 });

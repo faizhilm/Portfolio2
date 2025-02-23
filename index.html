@@ -11,9 +11,16 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
     <link rel="preload" href="styles.css" as="style">
     
+    <!-- Add preconnect for external resources -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <!-- Add meta theme-color -->
+    <meta name="theme-color" content="#00bcd4">
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Structured Data -->
@@ -30,11 +37,25 @@
         ]
     }
     </script>
+    <style>
+        /* Custom theme colors */
+        :root {
+            --magic-blue: #00B0F0;
+            --magic-accent: #4BA6DE;
+            --magic-dark: #1A1A1A;
+            --header-text-color: #ffffff; /* White color for better readability */
+            --header-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+        }
+    </style>
 </head>
 <body>
+    <!-- Magic circle background elements -->
+    <div class="magic-circle" aria-hidden="true"></div>
+    <div class="magic-circle" aria-hidden="true" style="animation-delay: -5s;"></div>
+    
     <header role="banner">
         <div class="title">
-            <h1><a href="index.html" aria-label="Home">FAIZ HILMIE</a></h1>
+            <h1><a href="index.html" data-text="FAIZ HILMIE">FAIZ HILMIE</a></h1>
         </div>
         <nav role="navigation" aria-label="Main navigation">
             <ul>
@@ -45,20 +66,20 @@
                 <li><a href="#3d-icon-animation"><i class="fas fa-cube" aria-hidden="true"></i> 3D Icon & Animation</a></li>
                 <li><a href="#unreal-engine-river"><i class="fas fa-water" aria-hidden="true"></i> Unreal Engine River</a></li>
                 <li><a href="#3d-jaguar"><i class="fas fa-car" aria-hidden="true"></i> 3D Jaguar F-Type</a></li>
-                <li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li> <!-- Remove any existing active class -->
             </ul>
         </nav>
     </header>
     <main role="main">
-        <section class="greeting" aria-labelledby="greeting-title">
+        <section class="greeting magic-effect" aria-labelledby="greeting-title">
             <div class="greeting-content">
                 <h2 id="greeting-title">Hi, I'm FAIZ HILMIE!</h2>
                 <p>Creative 3D Artist & Designer</p>
                 <div class="greeting-description">
                     <p>I specialize in creating stunning 3D visualizations and animations</p>
                 </div>
-                <button id="services-button" aria-label="Explore my services">
-                    Explore My Services
+                <button id="services-button" class="cta-button" aria-label="Explore my services">
+                    Activate Magic
                 </button>
             </div>
             <div class="greeting-decoration" aria-hidden="true"></div>
@@ -78,10 +99,10 @@
         
             <div class="grid-gallery" role="tabpanel">
                 <div class="project-card" data-category="3d-modeling">
-                    <img src="images/image1.png" 
+                    <img src="./images/image1.png" 
                          alt="Fabric Soft Glass - Material study" 
                          loading="lazy"
-                         onerror="this.onerror=null; this.src='images/placeholder.png'">
+                         onerror="this.onerror=null; this.src='./images/placeholder.png'">
                     <span class="project-category" aria-label="Category">3D Modeling</span>
                     <div class="project-info">
                         <h3>Fabric Soft Glass</h3>
@@ -90,10 +111,10 @@
                 </div>
                 
                 <div class="project-card" data-category="animation">
-                    <img src="images/image2.png" 
+                    <img src="./images/image2.png" 
                          alt="Portable CD Player - Retro device animation study" 
                          loading="lazy"
-                         onerror="this.onerror=null; this.src='images/placeholder.png'">
+                         onerror="this.onerror=null; this.src='./images/placeholder.png'">
                     <span class="project-category" aria-label="Category">Animation</span>
                     <div class="project-info">
                         <h3>Portable CD Player</h3>
@@ -102,7 +123,7 @@
                 </div>
 
                 <div class="project-card" data-category="design">
-                    <img src="images/image3.png" 
+                    <img src="./images/image3.png" 
                          alt="Joystick - Modern gaming peripheral concept" 
                          loading="lazy"
                          onerror="this.onerror=null; this.src='images/placeholder.png'">

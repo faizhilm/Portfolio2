@@ -16,10 +16,10 @@ body {
 }
 
 header {
-    width: 300px;
+    width: 250px; /* Reduced from 300px */
     height: 100vh;
     background: linear-gradient(to bottom, #ffffff, #f8f8f8);
-    padding: 2.5rem 2rem;
+    padding: 1.5rem 1rem; /* Reduced padding */
     box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
@@ -31,24 +31,46 @@ header {
     z-index: 1000;
     border-right: 1px solid rgba(0, 188, 212, 0.1);
     transition: all 0.3s ease;
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: rgba(0, 188, 212, 0.5) transparent; /* For Firefox */
 }
 
 header:hover {
     transform: translateX(5px);
 }
 
+/* Custom scrollbar styling for WebKit browsers */
+header::-webkit-scrollbar {
+    width: 6px;
+}
+
+header::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+header::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 188, 212, 0.5);
+    border-radius: 3px;
+}
+
 .title {
     position: relative;
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
+    padding-bottom: 1.5rem; /* Reduced padding */
+    margin-bottom: 1.5rem; /* Reduced margin */
     width: 100%;
     border-bottom: 2px solid rgba(0, 188, 212, 0.1);
     color: #00bcd4; /* Cyan color */
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    padding: 0.8rem; /* Reduced padding */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .title h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem; /* Reduced font size */
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -58,11 +80,91 @@ header:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    font-size: 1.8rem; /* Reduced font size */
+    text-shadow: none; /* Remove text shadow for better readability */
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.title h1 a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00bcd4, transparent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.5s ease;
+}
+
+.title h1 a:hover::before {
+    transform: scaleX(1);
+}
+
+.title h1 a::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.2; /* Increased base opacity */
+    background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: opacity 0.3s ease;
+}
+
+.title h1 a:hover::after {
+    opacity: 0.4; /* Increased hover opacity */
+}
+
+@keyframes titleFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2px); /* Reduced movement */
+    }
+}
+
+.title h1 a .letter {
+    display: inline-block;
+    animation: gentleWave 3s ease-in-out infinite;
+    animation-play-state: paused; /* Keep letters still by default */
+}
+
+.title h1:hover a .letter {
+    animation-play-state: running; /* Only animate on hover */
+}
+
+/* Reduce animation intensity */
+@keyframes gentleWave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2px); /* Reduced movement from -5px */
+    }
+}
+
+/* More subtle letter timing */
+.title h1 a .letter:nth-child(2n) {
+    animation-delay: 0.1s;
+}
+
+.title h1 a .letter:nth-child(3n) {
+    animation-delay: 0.2s;
 }
 
 .title h1 a:hover {
     transform: translateX(5px);
-    text-shadow: 2px 2px 4px rgba(0, 188, 212, 0.2);
+    text-shadow: 2px 2px 4px rgba(0, 188, 212, 0.1);
 }
 
 .title a {
@@ -75,10 +177,17 @@ header:hover {
     color: #0097a7;
 }
 
+nav {
+    width: 100%;
+    margin-bottom: 2rem; /* Add some bottom margin */
+}
+
 nav ul {
     width: 100%;
     padding: 0;
     margin: 0;
+    max-height: calc(100vh - 200px); /* Adjust based on header title height */
+    overflow-y: auto;
 }
 
 nav ul li {
@@ -97,6 +206,9 @@ nav ul li a {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis for long text */
 }
 
 nav ul li a::before {
@@ -128,9 +240,9 @@ nav ul li a:hover:not(.active) {
 }
 
 main {
-    margin-left: 320px; /* Adjusted margin to account for fixed header */
+    margin-left: 270px; /* Adjusted to match new header width */
     padding: 2rem;
-    width: calc(100% - 320px); /* Adjusted width to account for fixed header */
+    width: calc(100% - 270px); /* Adjusted to match new header width */
     max-width: 1200px;
 }
 
@@ -370,8 +482,8 @@ footer {
     padding: 2rem 0;
     background-color: #333333;
     color: #ffffff;
-    width: calc(100% - 320px); /* Account for fixed header */
-    margin-left: 320px;
+    width: calc(100% - 270px); /* Adjusted to match new header width */
+    margin-left: 270px; /* Adjusted to match new header width */
     position: relative; /* Change from fixed to relative */
     margin-top: 4rem; /* Add space above footer */
 }
@@ -412,6 +524,8 @@ footer {
         padding: 1.5rem;
         border-right: none;
         border-bottom: 1px solid #ddd; /* Light border */
+        max-height: 300px; /* Limit header height on mobile */
+        overflow-y: auto;
     }
 
     .title {
@@ -1409,6 +1523,79 @@ social-links a {
 
 /* ...existing code... */
 
+/* Magic Circle Animation */
+.magic-circle {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.15;
+    background-image: url('magic-circle.png');
+    background-size: contain;
+    animation: rotate 20s linear infinite;
+}
+
+.magic-circle::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 176, 240, 0.2) 0%, transparent 70%);
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Mahouka-inspired Button Style */
+.cta-button {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    background-color: #00B0F0; /* The Irregular at Magic High School blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.cta-button:hover {
+    background-color: #0091c7;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 176, 240, 0.5);
+}
+
+/* Magic Activation Effect */
+.magic-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.magic-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(0, 176, 240, 0.4),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.magic-effect:hover::before {
+    left: 100%;
+}
+
+/* ...existing code... */
+
 .project-card {
     transition: opacity 0.3s ease;
     opacity: 1;
@@ -1423,4 +1610,97 @@ social-links a {
     color: white;
 }
 
-/* ...existing code... */
+/* Optimize animations for better performance */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4);
+        transform: scale(1);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 188, 212, 0);
+        transform: scale(1.02);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 188, 212, 0);
+        transform: scale(1);
+    }
+}
+
+/* Fix mobile responsiveness */
+@media (max-width: 768px) {
+    header {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1rem;
+    }
+
+    main {
+        margin-left: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    footer {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .grid-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        position: static;
+    }
+}
+
+/* Add will-change for smoother animations */
+.title h1 a,
+.nav ul li a,
+.grid-gallery img,
+.project-card {
+    will-change: transform;
+}
+
+/* Add responsive design improvements */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .greeting h2 {
+        font-size: 2rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px; /* Prevent zoom on mobile */
+    }
+}
+
+/* Add loading state for form submission */
+.submit-button.loading {
+    position: relative;
+    color: transparent;
+}
+
+.submit-button.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
